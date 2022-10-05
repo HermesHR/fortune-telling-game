@@ -1,1 +1,1 @@
-# fortune-telling-game
+# fortune-telling-game using C
