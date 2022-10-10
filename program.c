@@ -6,10 +6,17 @@
 int main()
 {
     setlocale(LC_ALL, "Portuguese");
-    // imprime o cabeÃ§alho
-    printf("**********************************\n");
-    printf("* Bem vindo ao jogo de advinhação *\n");
-    printf("**********************************\n\n");
+    // imprime o cabeçalho
+
+    printf("\n\n");
+    printf("          P  /_\\  P                              \n");
+    printf("         /_\\_|_|_/_\\                            \n");
+    printf("     n_n | ||. .|| | n_n          Bem vindo ao    \n");
+    printf("     |_|_|nnnn nnnn|_|_|      Jogo de Adivinhação!\n");
+    printf("     |" "|  |_|  |"  " |                          \n");
+    printf("     |___| ' _ ' |_____|                          \n");
+    printf("          \\__|_|__/                              \n");
+    printf("\n\n");
 
     int segundos = time(0);
     srand(segundos);
@@ -88,7 +95,26 @@ int main()
     printf("Fim de jogo!\n");
 
     if (acertou)
+
     {
+
+        printf("             OOOOOOOOOOO               \n");
+        printf("         OOOOOOOOOOOOOOOOOOO           \n");
+        printf("      OOOOOO  OOOOOOOOO  OOOOOO        \n");
+        printf("    OOOOOO      OOOOO      OOOOOO      \n");
+        printf("  OOOOOOOO  #   OOOOO  #   OOOOOOOO    \n");
+        printf(" OOOOOOOOOO    OOOOOOO    OOOOOOOOOO   \n");
+        printf("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO  \n");
+        printf("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO  \n");
+        printf("OOOO  OOOOOOOOOOOOOOOOOOOOOOOOO  OOOO  \n");
+        printf(" OOOO  OOOOOOOOOOOOOOOOOOOOOOO  OOOO   \n");
+        printf("  OOOO   OOOOOOOOOOOOOOOOOOOO  OOOO    \n");
+        printf("    OOOOO   OOOOOOOOOOOOOOO   OOOO     \n");
+        printf("      OOOOOO   OOOOOOOOO   OOOOOO      \n");
+        printf("         OOOOOO         OOOOOO         \n");
+        printf("             OOOOOOOOOOOO              \n");
+        printf("\n\n");
+
         printf("Você ganhou!\n");
         printf("Você acertou em %d tentativas!\n", tentativas);
         printf("Você de pontos: %.1f\n", pontos);
@@ -96,5 +122,11 @@ int main()
     else
     {
         printf("Você perdeu! Tenta novamente!\n");
+
+        printf("       \\|/ ____ \\|/    \n");
+        printf("        @~/ ,. \\~@      \n");
+        printf("       /_( \\__/ )_\\    \n");
+        printf("          \\__U_/        \n");
+        printf("\n\n");
     }
 }
