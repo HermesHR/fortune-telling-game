@@ -1,68 +1,76 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include  <time.h>
+#include <time.h>
 
 int main()
 {
+    // imprime o cabeçalho
     printf("**********************************\n");
-    printf("* Welcome to the fortune-telling *\n");
+    printf("* Bem vindo ao jogo de advinhação *\n");
     printf("**********************************\n\n");
 
-    int seconds = time(0);
-    srand(seconds);
+    int segundos = time(0);
+    srand(segundos);
 
-    int bignumber = rand();
+    int numerogrande = rand();
 
-    int secretnumber = bignumber % 100;
+    int numerosecreto = numerogrande % 100;
+    int chute;
+    int tentativas = 1;
+    double pontos = 1000;
 
-    int kick;
-    int winner = 0;
-    int try = 1;
+    int acertou = 0;
 
-    double points = 1000;
+    int numerodetentativas = 5;
 
-    while (1)
+    for (int i = 1; i <= numerodetentativas; i++)
     {
-        printf("Attempt %d.\n\n", try);
-        printf("What is your kick? \n");
+        printf("Tentativa %d.\n\n", tentativas);
+        printf("Qual é o seu chute? \n");
 
-        scanf("%d", &kick);
-        printf("His kick was %d\n\n", kick);
+        scanf("%d", &chute);
+        printf("Seu chute foi %d\n\n", chute);
 
-        if (kick < 0)
+        if (chute < 0)
         {
-            printf("You can not kicker negative numbers!\n\n");
+            printf("Você não pode chutar numeros negativos!\n\n");
 
             continue;
         }
 
-        int hit = (kick == secretnumber);
-        int largest = (kick > secretnumber);
+        acertou = (chute == numerosecreto);
+        int maior = (chute > numerosecreto);
 
-        if (hit)
+        if (acertou)
         {
-            printf("You Win! Congratulations.\n\n");
-
-            break;
         }
 
-        else if (largest)
+        else if (maior)
         {
-            printf("Your number is largest than the secret number.\n\n");
+            printf("Seu chute foi maior que o número secreto.\n\n");
         }
 
         else
         {
-            printf("Your number is smaller than the secret number.\n\n");
+            printf("Seu chute foi menor que o número secreto.\n\n");
         }
 
-        try++;
+        tentativas++;
 
-        double lostpoints = abs(kick - secretnumber) / 2;
-        points = points - lostpoints;
+        double pontosperdidos = abs(chute - numerosecreto) / 2;
+        pontos = pontos - pontosperdidos;
     }
 
-    printf("End game!\n");
-    printf("You got it right in %d tries!\n", try);
-    printf("Total points: %.1f\n", points);
+    printf("Fim de jogo!\n");
+
+    if (acertou)
+    {
+        printf("Você ganhou!\n");
+        printf("Você acertou em %d tentativas!\n", tentativas);
+        printf("Total de pontos: %.1f\n", pontos);
+    }
+    else
+    {
+        printf("Você perdeu! Tenta novamente!\n");
+    }
 }
